@@ -37,7 +37,7 @@
             <div class="weight-mode-toggle">
                 <div class="weight-mode-wrapper" title="不建議長時間開啟權重模式，建議考過幾輪對特定章節熟悉後關閉此功能。">
                     <label for="weight-mode-switch">
-                        <input type="checkbox" id="weight-mode-switch">
+                        <input type="checkbox" id="weight-mode-switch" >
                         開啟答錯題目權重模式 (僅亂數測驗有效)
                     </label>
                     <p id="weight-status">目前權重: </p>
@@ -48,8 +48,8 @@
                 <span><button id="reset-weights-btn" class="control-btn">重置權重</button></span>
                 <span>                
                     <label for="random-option-switch">
-                    <input type="checkbox" id="random-option-switch">
-                    開啟選項亂數模式(所有考試模式有效)
+                    <input type="checkbox" id="random-option-switch" checked disabled hidden>
+                    <!-- 開啟選項亂數模式(所有考試模式有效) 已預設開啟，民航局實際測驗已採亂數選項模式 -->
                 </label>
             </span>
             </div>
@@ -64,8 +64,8 @@
         </div>
 
         <div id="random-options" class="options-menu" style="display:none;">
-            <h3>設定題目數量</h3>
-            <input type="number" id="random-question-count" value="40" min="1" max="100">
+            <!-- <h3>設定題目數量</h3> -->
+            <input type="number" id="random-question-count" value="40" min="1" max="100" disabled hidden>
             <button id="start-random-exam" class="start-btn">開始隨機測驗</button>
             <button class="back-btn">返回主選單</button>
         </div>
