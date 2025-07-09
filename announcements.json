@@ -1,0 +1,48 @@
+{
+  "announcements": [
+    {
+      "content": "試題內容轉換自民航局題庫\"<a href=\"https://www.caa.gov.tw/FileAtt.ashx?lang=1&id=38035\">專業操作證學科測驗題庫(1140528更新)_3833_102645.pdf</a>\"",
+      "type": "info",
+      "date": "2025-07-02"
+    },
+    {
+      "content": "本系統僅供學習與練習使用，實際考試請參照民航局最新公告。",
+      "type": "info",
+      "date": "2025-07-02"
+    },
+    {
+      "content": "若有任何問題或建議，歡迎透過github聯絡開發者，若有需更新題庫、可自行由github 提出PR更新。",
+      "type": "info",
+      "date": "2025-07-02"
+    },
+    {
+      "content": "更新流覽器記錄權重，並可自行清除權重",
+      "type": "update",
+      "date": "2025-07-02"
+    },
+    {
+      "content": "更新流覽器記錄成績，方便飛友了解學習狀況，並可自行清除成績",
+      "type": "update",
+      "date": "2025-07-02"
+    },
+    {
+      "content": "更新增加選項亂數功能",
+      "type": "update",
+      "date": "2025-07-05"
+    },
+    {
+      "content": "加入<a href=\"https://www.caa.gov.tw/FileAtt.ashx?lang=1&id=29149\">專業操作證屆期換證學科測驗題庫</a>",
+      "type": "update",
+      "date": "2025-07-05"
+    },
+        {
+      "content": "記念這個題庫系統完成7天後，學科通過啦！",
+      "type": "update",
+      "date": "2025-07-09"
+    },
+    {
+      "content": "祝各位永不炸機．考試一次過",
+      "type": "wish"
+    }
+  ]
+}

@@ -30,6 +30,46 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+.announcements-container {
+    max-height: 150px;
+    overflow-y: auto;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.announcement-item {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.announcement-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.announcement-item.type-update {
+    color: #0056b3;
+}
+
+.announcement-item.type-info {
+    color: #495057;
+}
+
+.announcement-item.type-wish {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.announcement-date {
+    font-size: 0.8em;
+    color: #6c757d;
+    margin-left: 10px;
+}
+
 h1, h2, h3 {
     text-align: center;
     color: #0056b3;
@@ -75,6 +115,11 @@ h1 {
 .weight-mode-toggle {
     margin-top: 20px;
     font-size: 0.9em;
+}
+
+.weight-mode-wrapper {
+    cursor: help;
+    display: inline-block;
 }
 
 .control-btn {

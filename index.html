@@ -5,7 +5,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>遙控無人機專業操作證學科測驗模擬系統</title>
+    <title>遙控無人機學科模擬考系統</title>
 
 
     <link rel="stylesheet" href="style.css">
@@ -13,15 +13,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>遙控無人機專業操作證學科模擬考系統</h1>
-        <p>試題內容轉換自民航局題庫"專業操作證學科測驗題庫(1140528更新)_3833_102645.pdf"</p>
-        <p>本系統僅供學習與練習使用，實際考試請參照民航局最新公告。</p>
-        <p>若有任何問題或建議，歡迎聯絡開發者。</p>
-        <p>7/2 更新流覽器記錄權重，並可自行清除權重</p>
-        <p>7/2 更新流覽器記錄成績，方便飛友了解學習狀況，並可自行清除成績</p>
-        <p>7/5 更新增加選項亂數功能</p>
-        <p>7/5 加入專業操作證屆期換證學科測驗題庫</p>
-        <p>祝各位永不炸機．考試一次過</p>
+        <h1>遙控無人機學科模擬考系統</h1>
+        <div class="announcements-container" id="announcements">
+            <!-- 公告內容將由 JavaScript 動態載入 -->
+        </div>
         <div id="score-history-chart-container">
             <canvas id="scoreChart"></canvas>
         </div>
@@ -40,12 +35,13 @@
                 </select>
             </div>
             <div class="weight-mode-toggle">
-                <label for="weight-mode-switch">
-                    <input type="checkbox" id="weight-mode-switch">
-                    開啟答錯題目權重模式 (僅亂數測驗有效)
-                </label>
-                <p id="weight-status">目前權重: </p>
-                
+                <div class="weight-mode-wrapper" title="不建議長時間開啟權重模式，建議考過幾輪對特定章節熟悉後關閉此功能。">
+                    <label for="weight-mode-switch">
+                        <input type="checkbox" id="weight-mode-switch">
+                        開啟答錯題目權重模式 (僅亂數測驗有效)
+                    </label>
+                    <p id="weight-status">目前權重: </p>
+                </div>
             </div>
             <div class="score-controls">
                 <span><button id="clear-scores-btn" class="control-btn">清除成績記錄</button></span>

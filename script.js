@@ -76,6 +76,46 @@ function updateScoreChart() {
 }
 document.addEventListener('DOMContentLoaded', async function() {
     // =========================================================================
+    // 載入公告
+    // =========================================================================
+    async function loadAnnouncements() {
+        try {
+            const response = await fetch('./announcements.json');
+            const data = await response.json();
+            const announcementsContainer = document.getElementById('announcements');
+            
+            // 分離有日期和無日期的公告
+            const noDateAnnouncements = data.announcements.filter(a => !a.date);
+            const dateAnnouncements = data.announcements.filter(a => a.date);
+            
+            // 對有日期的公告進行排序（從新到舊）
+            dateAnnouncements.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            // 合併公告：無日期的在前，有日期的在後
+            const sortedAnnouncements = [...noDateAnnouncements, ...dateAnnouncements];
+            
+            // 清空容器
+            announcementsContainer.innerHTML = '';
+            
+            // 添加排序後的公告
+            sortedAnnouncements.forEach(announcement => {
+                const div = document.createElement('div');
+                div.className = `announcement-item type-${announcement.type}`;
+                
+                let content = announcement.content;
+                if (announcement.date) {
+                    content += `<span class="announcement-date">${announcement.date}</span>`;
+                }
+                
+                div.innerHTML = content;
+                announcementsContainer.appendChild(div);
+            });
+        } catch (error) {
+            console.error('載入公告失敗:', error);
+        }
+    }
+
+    // =========================================================================
     // 系統狀態變數
     // =========================================================================
     let exam_source = './exam.json';
@@ -547,6 +587,7 @@ function loadWeightsFromStorage() {
     // =========================================================================
     // 初始設定
     // =========================================================================
+    await loadAnnouncements();
     updateWeightStatus();
     updateScoreChart();
     showScreen(mainMenu);
