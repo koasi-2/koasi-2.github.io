@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>遙控無人機專業操作證學科測驗模擬系統</title>
+
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>遙控無人機專業操作證學科模擬考系統</h1>
+        <p>試題內容轉換自民航局題庫"專業操作證學科測驗題庫(1140528更新)_3833_102645.pdf"</p>
+        <p>本系統僅供學習與練習使用，實際考試請參照民航局最新公告。</p>
+        <p>若有任何問題或建議，歡迎聯絡開發者。</p>
+        <p>7/2 更新流覽器記錄權重，並可自行清除權重</p>
+        <p>7/2 更新流覽器記錄成績，方便飛友了解學習狀況，並可自行清除成績</p>
+        <p>7/5 更新增加選項亂數功能</p>
+        <p>7/5 加入專業操作證屆期換證學科測驗題庫</p>
+        <p>祝各位永不炸機．考試一次過</p>
+        <div id="score-history-chart-container">
+            <canvas id="scoreChart"></canvas>
+        </div>
+        <div id="main-menu">
+            <h2>選擇測驗模式</h2>
+            <div class="mode-selection">
+                <button id="chapter-mode-btn" class="mode-btn">按章節測驗</button>
+                <button id="random-mode-btn" class="mode-btn">亂數測驗</button>
+            </div>
+            <h2> 選擇題庫</h2>
+            <div class="question-bank-selection">
+                <label for="question-bank-select">選擇題庫:</label>
+                <select id="question-bank-select">
+                    <option value="1">專業操作證學科測驗題庫【2025.5.28更新】</option>
+                    <option value="2">專業操作證屆期換證學科測驗題庫【2022.7.7更新】</option>
+                </select>
+            </div>
+            <div class="weight-mode-toggle">
+                <label for="weight-mode-switch">
+                    <input type="checkbox" id="weight-mode-switch">
+                    開啟答錯題目權重模式 (僅亂數測驗有效)
+                </label>
+                <p id="weight-status">目前權重: </p>
+                
+            </div>
+            <div class="score-controls">
+                <span><button id="clear-scores-btn" class="control-btn">清除成績記錄</button></span>
+                <span><button id="reset-weights-btn" class="control-btn">重置權重</button></span>
+                <span>                
+                    <label for="random-option-switch">
+                    <input type="checkbox" id="random-option-switch">
+                    開啟選項亂數模式(所有考試模式有效)
+                </label>
+            </span>
+            </div>
+        </div>
+
+        <div id="chapter-options" class="options-menu" style="display:none;">
+            <h3>選擇章節與範圍</h3>
+            <select id="chapter-select"></select>
+            <select id="block-select"></select>
+            <button id="start-chapter-exam" class="start-btn">開始章節測驗</button>
+            <button class="back-btn">返回主選單</button>
+        </div>
+
+        <div id="random-options" class="options-menu" style="display:none;">
+            <h3>設定題目數量</h3>
+            <input type="number" id="random-question-count" value="40" min="1" max="100">
+            <button id="start-random-exam" class="start-btn">開始隨機測驗</button>
+            <button class="back-btn">返回主選單</button>
+        </div>
+        
+        <div id="exam-area" style="display:none;">
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <div id="question-container">
+                </div>
+            <button id="submit-exam-btn">提交答案</button>
+        </div>
+
+        <div id="result-area" style="display:none;">
+            <h2>考試結果</h2>
+            <p id="score"></p>
+            <div id="result-details">
+                </div>
+            <button class="back-btn">返回主選單</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
